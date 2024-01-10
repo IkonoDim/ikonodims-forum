@@ -33,6 +33,8 @@ cd ikonodims-forum
 python3 -m pip install -r requirements.txt
 python3 main.py
 ```
+
+Attention! The port can be changed in line 16 in the main.py file. It's defaultly set to "0.0.0.0" at port 5000
     
 ## Made using
 
