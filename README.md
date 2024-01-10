@@ -29,7 +29,7 @@ sudo apt-get install git
 cd /home
 mkdir ikonodim_forum
 cd ikonodim_forum
-git clone [repository URL]
+git clone https://github.com/IkonoDim/ikonodims-forum
 
 python3 -m pip install -r requirements.txt
 python3 main.py
