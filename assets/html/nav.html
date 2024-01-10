@@ -1,0 +1,19 @@
+<!-- This is the sites nav-bar. It displays the copyright, and loads the configured nav-links and labels. -->
+<nav>
+        <section>
+            <img src="/assets/png/logomark" />
+            <h1>Forum</h1>
+        </section>
+        <section>
+            {%for element in site.nav_elements%}
+                <button onclick="window.location='{{element[1]}}'">{{element[0]}}</button>
+            {%endfor%}
+        </section>
+        <section>
+            <p>&copy; 2023 Dimitrios Ikonomou</p>
+        </section>
+        <section id="user-message-area"></section>
+    <!-- This is the user-message area where important user messages such as the posting of a comment are
+    posted by the js-scripts (-> utils.js) -->
+        <bar></bar>
+    </nav>

@@ -1,0 +1,137 @@
+main {
+    font-family: var(--heading-font);
+}
+main div:nth-of-type(1) {
+    /* Here the main-post is displayed */
+    color: var(--font-clr-primary);
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+main div:nth-of-type(1) span.top_area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 1vw;
+    gap: .3vw;
+    height: 3.5vw;
+}
+main div:nth-of-type(1) span.top_area container.statistics {
+    position: relative;
+    left: 3vw;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1vw;
+}
+main div:nth-of-type(1) span.top_area container.statistics statistic {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: .2vw;
+}
+main div:nth-of-type(1) p {
+    padding: 0 2vw;
+    margin: 0 0 .75vw;
+    text-align: justify; /* this makes the text automatically stretch evenly to the end of the parent */
+    position: relative;
+}
+main div:nth-of-type(1) span.interaction_area container {
+    display: flex;
+    gap: 1vw;
+    position: relative;
+    left: 1vw;
+}
+main div:nth-of-type(1) span.interaction_area container interaction {
+    display: flex;
+    align-items: center;
+    gap: .4vw;
+    transition: .2s all;
+    border-radius: .2vw;
+    cursor: pointer;
+    padding: .2vw .4vw;
+}
+main div:nth-of-type(1) span.interaction_area container interaction:hover {
+    background-color: rgba(200, 200, 200, .1);
+}
+main div:nth-of-type(1) span.interaction_area container interaction.interacted {
+    background-color: rgba(200, 200, 200, .05);
+}
+main div:nth-of-type(2) {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly; /* This flag makes the children of its element space evenly in the whole parent */
+    top: 1vw;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main div:nth-of-type(2) input {
+    color: var(--font-clr-primary);
+    width: 90%;
+}
+main div:nth-of-type(2) button {
+    all: unset;
+    color: var(--main-background);
+    background-color: var(--nav-background);
+    border-radius: .2vw;
+    height: 2vw;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s all;
+    pointer-events: none;
+    /* When this flag is set to "none" it makes that when the client click the element nothing happens */
+}
+main div:nth-of-type(2) button.active {
+    color: var(--font-clr-primary);
+    cursor: pointer;
+    pointer-events: all; /* This allows all interactions again */
+}
+main div:nth-of-type(2) button.active:hover {
+    filter: brightness(1.2);
+}
+
+main div:nth-of-type(3) {
+    width: 95%;
+    height: max-content; /* This makes that the height will be as big as the content */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--font-clr-primary);
+    display: flex;
+    flex-direction: column; /* This changes the direction of the "flexing" */
+    gap: 2vw;
+    margin-top: 2.5vw;
+    padding-bottom: 2vw;
+}
+main div:nth-of-type(3) span p,
+main div:nth-of-type(3) span h3 {
+    margin: 0;
+}
+main div:nth-of-type(3) span {
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+}
+main div:nth-of-type(3) span container.statistics {
+    font-size: .6vw;
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+
+/* This changes the scrollbar colors and size and overwrites the default specified in "struct.css" */
+main {
+    scrollbar-color: var(--nav-background) transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: var(--nav-background) !important;
+}
+main::-webkit-scrollbar {
+    width: .3vw;
+}

@@ -1,0 +1,27 @@
+/* I don't think I'll have to explain something about this.
+ Just makes sure that the document looks good and some formatting stuff. */
+main {
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+}
+main p {
+    padding: 0 2vw;
+}
+main label,
+main h3 {
+    padding: 0 1vw;
+}
+main h2 {
+    font-size: 1.2vw;
+}
+#urherberrecht p,
+#haftung_fuer_links p,
+#datenschutz p {
+    font-size: .6vw;
+    margin: 0 0 .25vw;
+}
+#urherberrecht label,
+#haftung_fuer_links label,
+#datenschutz label {
+    font-size: .7vw;
+}

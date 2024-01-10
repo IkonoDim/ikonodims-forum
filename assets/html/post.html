@@ -1,0 +1,56 @@
+<!-- This is the Post-Template. It takes a lot of information from the backend such as the author's username
+or the post's views, likes or dislikes -->
+<main>
+    <div>
+        <span class="top_area">
+            <h1>{{post.title}}</h1>
+            <container class="statistics">
+                <statistic><i class="fa-regular fa-user"></i> @{{post.user.username}}</statistic>
+                <statistic><i class="fa-regular fa-clock"></i><timestamp>{{post.timestamp}}</timestamp></statistic>
+                <statistic><i class="fa-regular fa-eye"></i>{{post.views}}</statistic>
+            </container>
+        </span>
+        <span>
+            <p>{{post.content}}</p>
+        </span>
+        <span class="interaction_area">
+            <container class="interactions">
+                <!-- This section manages how the like-buttons will be displayed. If the post is liked/disliked the
+                corresponding button gets the "interacted" class which is also essential for the js-handler of
+                interactions to work correctly -->
+                {% if post.post_id in user.liked_posts %}
+                    <interaction class="interacted" id="like_btn"><i class="fa-regular fa-thumbs-up"></i> {{post.likes}}</interaction>
+                {% else %}
+                    <interaction id="like_btn"><i class="fa-regular fa-thumbs-up"></i> {{post.likes}}</interaction>
+                {% endif %}
+
+                {% if post.post_id in user.disliked_posts %}
+                    <interaction class="interacted" id="dislike_btn"><i class="fa-regular fa-thumbs-down"></i> {{post.dislikes}}</interaction>
+                {% else %}
+                    <interaction id="dislike_btn"><i class="fa-regular fa-thumbs-down"></i> {{post.dislikes}}</interaction>
+                {% endif %}
+
+                <!-- This is the share interaction which when pressed opens the default
+                clients share menu with the current url -->
+                <interaction onclick="navigator.share({url: window.location.href})"><i class="fa-regular fa-share-nodes"></i> Teilen</interaction>
+            </container>
+        </span>
+    </div>
+    <div>
+        <input id="answer_field" type="text" placeholder="Antworten...">
+        <button id="answer_submit_btn"><i class="fa-solid fa-paper-plane-top"></i></button>
+    </div>
+    <div>
+        <!-- This is the section that handles comments. It also takes lots of information from the backend -->
+        {%for comment in post.comments%}
+        <span>
+            <h3>{{comment.title}}</h3>
+            <p>{{comment.content}}</p>
+            <container class="statistics">
+                <statistic><i class="fa-regular fa-user"></i> <label>@{{comment.user.username}}</label></statistic>
+                <statistic><i class="fa-regular fa-clock"></i> <label><timestamp>{{comment.timestamp}}</timestamp></label></statistic>
+            </container>
+        </span>
+        {%endfor%}
+    </div>
+</main>

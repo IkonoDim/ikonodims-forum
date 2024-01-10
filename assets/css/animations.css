@@ -1,0 +1,14 @@
+@keyframes horizontal-shaking {
+    /* this animation is used for when there is something wrong in a input field */
+    0% { transform: translateX(0) }
+    25% { transform: translateX(-.5vw) }
+    50% { transform: translateX(.5vw) }
+    75% { transform: translateX(-.5vw) }
+    100% { transform: translateX(0) }
+}
+
+@keyframes lefttoright {
+    /* this is used for the "shining" animation in the "New Post" button on the home page */
+    0% { left: -5vw }
+    100% { left: calc(100% + 2.25vw) }
+}

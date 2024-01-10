@@ -1,0 +1,51 @@
+footer div:nth-of-type(1) {
+    /* the first div of the footer which includes the urls to the
+    imprint and the privacy-policy. Are positioned to the left of
+    the footer and a gap of .5 view-width is made */
+    position: absolute;
+    left: 0;
+    display: flex;
+    gap: .5vw;
+}
+footer div:nth-of-type(1) a {
+    color: var(--font-clr-primary);
+    cursor: pointer;
+    font-size: .6vw;
+}
+footer div:nth-of-type(1) a:hover {
+    border-color: var(--font-clr-primary);
+}
+footer div:nth-of-type(2) {
+    /* This second div is for the client's username and the logout button.
+     The elements are made to be side-by-side and have a .3vw gap. They
+     are also vertically aligned*/
+
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 0;
+    color: var(--font-clr-primary);
+    gap: .3vw;
+}
+footer div:nth-of-type(2) i {
+    /* This is for the logout icon / interaction */
+    font-size: .6vw;
+    margin-top: .2vw;
+}
+footer div:nth-of-type(2) p {
+    font-size: .6vw;
+}
+footer div:nth-of-type(2) button {
+    all: unset;
+    color: var(--font-clr-primary);
+    transition: .2s all;
+    margin-left: .5vw;
+    cursor: pointer;
+}
+footer div:nth-of-type(2) button i {
+    font-size: .7vw;
+}
+footer div:nth-of-type(2) button:hover {
+    color: red;
+}

@@ -1,0 +1,168 @@
+main {
+    /* some basic/fundamental things like the font-family and the color.
+     But also the overflow is hidden so no scrollbars appear if something
+     gets out of the view-width. */
+
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+    box-sizing: border-box;
+    padding: 1vw 4vw;
+    overflow: hidden;
+}
+main h1 {
+    font-size: 4vw;
+}
+main div:nth-of-type(1) {
+    display: flex;
+    gap: 15vw;
+    align-items: center;
+}
+main div:nth-of-type(1) button {
+    all: unset;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1vw;
+    font-size: 2vw;
+    font-weight: 600;
+    border-radius: 1vw;
+    padding: 2vw 7vw;
+    border: .3vw solid rgb(200, 200, 200, .4);
+    transition: .2s all;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+main div:nth-of-type(1) button:active {
+    scale: .95;
+}
+main div:nth-of-type(1) button i {
+    font-size: 2.5vw;
+}
+main div:nth-of-type(1) button bar {
+    /* This is the animated element of the button with the "shining" animation i referred
+    to in the animations.css */
+
+    position: absolute;
+    height: 150%;
+    width: 15%;
+    z-index: 1000;
+    left: -5vw;
+    animation: lefttoright .75s forwards;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+    rotate: 20deg;
+    display: block;
+    background-image: linear-gradient(to left, transparent, rgba(200, 200, 200, .3), transparent);
+}
+main div:nth-of-type(1) button:hover {
+     background: rgb(200, 200, 200, .025);
+}
+
+
+
+main div:nth-of-type(2) {
+    /* This is the field for the latest posts on the main-page. It has a 2vw spacing
+     from the element on top and a more light background. It has a 100% width and
+     a 62vh height. The border-radius is set to .5vw so it is more round. */
+
+    position: relative;
+    top: 2vw;
+    width: 100%;
+    height: 62vh;
+    background-color: var(--nav-background);
+    border-radius: .5vw;
+    overflow: hidden;
+}
+main div:nth-of-type(2) shadow {
+    /* This is the shadow effect so the posts dont just cut-off */
+
+    width: 100%;
+    position: absolute;
+    height: 5%;
+    bottom: 0;
+    background-image: linear-gradient(to top, var(--main-background), transparent);
+}
+main div:nth-of-type(2) span {
+    /* Here the posts are displayed so the x-overflow is hidden and the overflow-y is set to auto.
+    This means that if something y-overflows the scroll-bar appears. Else not. */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 2vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+main div:nth-of-type(2) span sec:last-child {
+    /* The last post has a bottom-margin of 2vw so the user can see it.
+     Else the shadow would block vision */
+
+    margin-bottom: 2vw;
+}
+/* Here the posts "cards" are beeing configured */
+main div:nth-of-type(2) span sec {
+    width: 90%;
+    position: relative;
+    display: block;
+    height: 15vw;
+    border-radius: .5vw;
+    transition: .2s all;
+    cursor: pointer;
+    background-color: rgba(200, 200, 200, .025);
+}
+main div:nth-of-type(2) span sec:hover {
+    background-color: rgba(200, 200, 200, .1);
+}
+main div:nth-of-type(2) span sec h2 {
+    font-size: 1.2vw;
+    position: relative;
+    left: 1vw;
+    top: .5vw;
+    padding: 0;
+    margin: 0;
+}
+main div:nth-of-type(2) span sec p {
+    width: 95%;
+    min-height: 1vw;
+    height: max-content;
+    max-height: 5vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* The p-element, if there is much text, wont expand over 5vw and the user can scroll down to read the rest.
+    And if there is not much text it wont be smaller then 1vw. */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* This centers the element horizontally */
+    top: .75vw;
+    padding: 0 .2vw 0 0;
+    margin: 0 0 1.2vw;
+}
+main div:nth-of-type(2) span sec container.statistics {
+    /* the statistics like views, time of creation and username are displayed here */
+    position: relative;
+    font-size: .6vw;
+    display: flex;
+    gap: 1vw;
+    bottom: .2vw;
+    left: 1vw;
+}
+main div:nth-of-type(2) span sec container.statistics statistic {
+    display: flex;
+    align-items: center;
+    gap: .25vw;
+}
+main div:nth-of-type(2) span sec container.statistics statistic i {
+    position: relative;
+    top: .1vw;
+}

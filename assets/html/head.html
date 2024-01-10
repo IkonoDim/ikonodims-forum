@@ -1,0 +1,21 @@
+<head>
+    <!-- This is the head. It specifies important values such as the title, the favicon, the charset and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/ico/{{site.icon.name}}">
+
+    <!-- This part handles the css-asset loading specified in the sites configuration -->
+    {%for asset in site.css_assets%}
+        <link rel="stylesheet" href="/assets/css/{{asset.name}}" />
+    {%endfor%}
+
+    <!-- This "link" loads the stylesheet of the icon-set I use, font-awesome -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <!-- This part handles the js-asset loading specified in the sites configuration -->
+    {%for asset in site.scripts%}
+        <script src="/assets/js/{{asset.name}}"></script>
+    {%endfor%}
+</head>

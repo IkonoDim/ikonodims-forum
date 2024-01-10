@@ -1,0 +1,24 @@
+<!-- This is the main-home-page -->
+<main>
+    <div>
+        <h1>Home</h1>
+        <button onclick="window.location = '/new_post'"><bar></bar><i class="fa-duotone fa-circle-plus"></i> Neuer Post</button>
+    </div>
+    <div>
+            <span id="scroll_window">
+                <!-- This loads all the posts passed from the backend -->
+                {%for post in posts%}
+                    <sec onclick="window.location = '/post/{{post.post_id}}'">
+                    <h2>{{post.title}}</h2>
+                    <p>{{post.content}}</p>
+                    <container class="statistics">
+                        <statistic><i class="fa-regular fa-user"></i> @{{post.user.username}}</statistic>
+                        <statistic><i class="fa-regular fa-clock"></i><timestamp>{{post.timestamp}}</timestamp></statistic>
+                        <statistic><i class="fa-regular fa-eye"></i>{{post.views}}</statistic>
+                    </container>
+                    </sec>
+                {%endfor%}
+            </span>
+        <shadow></shadow>
+    </div>
+</main>

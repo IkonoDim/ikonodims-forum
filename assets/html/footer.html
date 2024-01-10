@@ -1,0 +1,16 @@
+<footer>
+        <!-- This is the footer. It includes urls to the imprint, privacy-policy and the logout.
+        It is also able to display the client's username -->
+        <div>
+                <a href="/imprint">Impressum</a>
+                <a href="/privacy-policy">Datenschutzerklärung</a>
+        </div>
+        <div>
+                <!-- If the site.title is Home, Post or Neuer Post it displays the username and logout option -->
+                {%if site.title in ["Home", "Post", "Neuer Post"]%}
+                <p>@{{session.session_user.username}}</p>
+                <button onclick="window.location = '/logout'"><i class="fa-solid fa-right-from-bracket"></i></button>
+                {%endif%}
+        </div>
+
+</footer>

@@ -1,0 +1,49 @@
+main span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* this centers the element horizontally and vertically in the parent element */
+    width: 20vw;
+    height: 30vw;
+    border-radius: .5vw;
+    background: var(--form-background);
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+    text-align: center; /* this makes the text horizontally centered */
+    overflow: hidden;
+}
+main span h1 {
+    font-size: 2vw;
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    /* this makes that the elements in the form are below each other and have a 1vw gap between them */
+
+    align-items: center;
+    justify-content: center;
+    /* These arguments make all the children of form centered horizontally and vertically inside of the form */
+    /* They only work when the display flag of the parent is set to "flex" */
+
+    position: relative;
+    top: 2vw;
+    width: 100%;
+}
+main form a {
+    font-size: .6vw;
+    position: absolute;
+    top: 5.3vw;
+    left: 2.8vw;
+}
+main button.submit-btn {
+    position: relative;
+    top: 5vw;
+}
+main img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

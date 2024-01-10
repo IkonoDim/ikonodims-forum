@@ -1,0 +1,56 @@
+main {
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+}
+
+main a {
+    font-size: 2vw;
+    transition: .1s all;
+}
+main table {
+    width: 100%;
+    background-color: var(--form-background);
+    border-radius: .5vw; /* rounds the corners */
+    overflow: hidden; /* hides the overflow so the ths dont mess up the roundness */
+}
+
+main th,
+main td {
+    padding: 1vw;
+    text-align: center;
+}
+
+main tr {
+    transition: .2s all;
+    cursor: pointer;
+}
+main tr:first-child:hover {
+    scale: 1;
+}
+main tr:hover {
+    background-color: rgb(200, 200, 200, .05);
+    scale: 1.1; /* making the row bigger when cursor is hovering over it */
+}
+
+main th {
+    background-color: dodgerblue;
+    color: var(--font-clr-primary);
+    padding: .5vw;
+    width: 50%; /* makes sure that both table heads only use 50% of the table */
+}
+
+main li {
+    background-color: var(--form-background);
+    color: white;
+    padding: .5vw;
+    margin-bottom: .5vw;
+    border-radius: .5vw;
+    cursor: pointer;
+    transition: .2s all;
+    filter: blur(.2vw); /* blurs the whole element */
+}
+main li:hover {
+    padding-left: 1vw;
+    filter: blur(0);
+
+}

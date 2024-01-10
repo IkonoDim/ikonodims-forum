@@ -1,0 +1,43 @@
+main span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* this centers the element horizontally and vertically in the parent element */
+    width: 20vw;
+    height: 33vw;
+    border-radius: .5vw;
+    background: var(--form-background);
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+    text-align: center; /* this makes the text horizontally centered */
+    overflow: hidden;
+}
+main span:nth-of-type(1) h1 {
+    font-size: 2vw;
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    /* this makes that the elements in the form are below each other and have a 1vw gap between them */
+
+    align-items: center;
+
+    position: relative;
+    top: 0vw;
+    width: 100%;
+}
+main form textarea {
+    font-family: var(--heading-font);
+}
+main button.submit-btn {
+    position: relative;
+    top: 1vw;
+}
+main img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

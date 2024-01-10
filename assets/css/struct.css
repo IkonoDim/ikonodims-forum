@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+    --main-background: #282828;
+    --nav-background: #383838;
+    --form-background: rgba(200, 200, 200, .1);
+
+
+    --font-clr-primary: rgb(200, 200, 200);
+    --font-clr-a: rgb(32, 109, 253);
+    --heading-font: 'Lexend', sans-serif;
+}
+
+body {
+    background: var(--main-background);
+}
+
+/* base structure */
+nav {
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 6vh;
+    top: 1vh;
+    border-radius: .5vw;
+}
+
+main {
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 88vh;
+    top: 8vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: .5vw;
+    width: 95%;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1vw;
+    font-family: var(--heading-font);
+    z-index: 1000; /* this index used for what is in front of another. The bigger the number the further in front it is */
+    background-color: var(--main-background);}
+
+
+/* cookie banner */
+cookiebanner {
+    position: fixed;
+    bottom: 1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    border-radius: .5vw;
+    height: 5vw;
+    z-index: 1001;
+    background-color: var(--nav-background);
+    color: var(--font-clr-primary);
+    font-family: var(--heading-font);
+    box-shadow: 0 0 1vw .1vw #232323;
+}
+cookiebanner i:nth-of-type(1) {
+    position: absolute;
+    top: .7vw;
+    left: .5vw;
+    font-size: 1.4vw;
+}
+cookiebanner i:nth-of-type(2) {
+    position: absolute;
+    top: .5vw;
+    right: .5vw;
+    font-size: 1.2vw;
+    transition: .2s all;
+    cursor: pointer;
+}
+cookiebanner i:nth-of-type(2):hover {
+    color: rgba(255, 0, 0, .7);
+}
+cookiebanner h4 {
+    font-size: 1.1vw;
+    position: absolute;
+    top: .7vw;
+    left: 2.5vw;
+    margin: 0;
+}
+cookiebanner p {
+    position: absolute;
+    top: 1.8vw;
+    font-size: .7vw;
+    padding: 0 1vw;
+}
+
+/* some global designs */
+a {
+    color: var(--font-clr-a);
+    text-decoration: none;
+    transition: .2s all;
+}
+
+a:hover {
+    border-bottom: .1vw solid var(--font-clr-a);
+}
+
+button.submit-btn {
+    all: unset;
+    border: .2vw solid rgb(200, 200, 200, .4);
+    color: rgb(200, 200, 200, .8);
+    padding: 1vw 2vw;
+    border-radius: .5vw;
+    font-weight: 600;
+    transition: .2s all;
+    font-size: 1vw;
+}
+
+button.submit-btn:hover {
+    cursor: pointer;
+    border: .2vw solid rgb(200, 200, 200, .7);
+    background: rgb(255, 255, 255, .025);
+}
+
+input{
+    all: unset;
+    width: 13.5vw;
+    text-align: left;
+    padding: 0 .5vw;
+    font-size: .9vw;
+    height: 2vw;
+    background: var(--form-background);
+    border-radius: .2vw;
+    letter-spacing: .05vw;
+}
+
+textarea {
+    resize: none;
+    width: 13.5vw;
+    border: none;
+    outline: none;
+    background: var(--form-background);
+    border-radius: .2vw;
+    padding: .5vw .5vw;
+    height: 10vw;
+    color: var(--font-clr-primary);
+
+}
+
+/* loading animation */
+loading {
+    display: flex;
+    gap: .25vw;
+}
+loading ball {
+    width: .4vw;
+    height: .4vw;
+    background: rgb(200, 200, 200, .2);
+    animation: loadingBalls 1s infinite;
+    border-radius: 50%;
+}
+loading ball:nth-child(1) {
+    animation-delay: .3s;
+}
+loading ball:nth-child(2) {
+    animation-delay: .6s;
+}
+loading ball:nth-child(3) {
+    animation-delay: .9s;
+  }
+
+@keyframes loadingBalls {
+    0%, 100% {
+        background: rgb(200, 200, 200, .2);
+    }
+
+    50% {
+        background: rgb(200, 200, 200, .6);
+    }
+}
+
+
+/* This is the Scrollbar design and size */
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-background) transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: .2vw;
+    border-radius: 300000px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--main-background);
+    border-radius: 300000px;
+    border: none;
+}

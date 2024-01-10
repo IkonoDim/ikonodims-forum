@@ -1,0 +1,71 @@
+/* Already explained this twice. Not doing that again */
+main span:nth-of-type(1) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 30vw;
+    border-radius: .5vw;
+    background: var(--form-background);
+    font-family: var(--heading-font);
+    color: var(--font-clr-primary);
+    text-align: center;
+    overflow: hidden;
+}
+main span:nth-of-type(1) h1 {
+    font-size: 2vw;
+}
+main form {
+    display: flex;
+    position: relative;
+    top: 2vw;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+main form input {
+    position: relative;
+}
+main form a {
+    font-size: .6vw;
+    position: absolute;
+    top: 5.3vw;
+    left: 2.8vw;
+}
+main button.submit-btn {
+    position: relative;
+    top: 3.5vw;
+}
+main img {
+    width: 101%;
+    position: absolute;
+    bottom: 0;
+    left: -.1vw;
+}
+
+/* The elements for the shaking animation I explained in "animations.css" */
+main form p#password-short-error,
+main form p#username-character-error,
+main form p#password-matching-error {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-size: .6vw;
+    font-weight: 200;
+    letter-spacing: .02vw;
+    opacity: 0;
+    transition: .2s all;
+    display: none;
+}
+main form p#password-short-error {
+    top: 4.45vw;
+}
+main form p#username-character-error {
+    top: 1.45vw;
+}
+main form p#password-matching-error {
+    top: 7.4vw;
+}
