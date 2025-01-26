@@ -7,13 +7,7 @@ This is a simple forum application with features like:
 - sharing
 ... and more.
 
-I invested +100h into this project hand-writing approx. 2900 lines.
-
-
-
-## Demo
-
-[ikonodim.com](https://ikonodim.com/)
+I invested +100h into this project hand-writing approx. 2900 lines of code.
 
 
 ## Installation & Run
